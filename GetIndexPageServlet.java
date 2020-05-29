@@ -24,22 +24,12 @@ public class GetIndexPageServlet extends HttpServlet {
         for (int i = 0; i < size; i++) {
             arr[i] = Integer.parseInt(str[i]);
         }
-        int temp;
-        for (int i = 0; i < arr.length; i++)
-        {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j])
-                {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
+        int sum=0;
+        for (int i = 0; i < size; i++) {
+            sum = sum + arr[i];
         }
         PrintWriter printWriter = resp.getWriter();
-        for (int i = 0; i < arr.length; i++) {
-            printWriter.print(arr[i]+" ");
-        }
+            printWriter.print(sum);
     }
 }
 
